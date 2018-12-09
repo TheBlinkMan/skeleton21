@@ -1,0 +1,19 @@
+version: '3'
+services:
+  desafio21:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+    ports:
+     - "8080:80"
+    volumes:
+     - .:/var/www
+  mysql:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: hackathon21
+      MYSQL_ROOT_PASSWORD: root
