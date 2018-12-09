@@ -1,6 +1,26 @@
-# skeleton21 
+# skeleton21
 
-## 
+## How to use
+
+### Clone the app:
+```
+git clone https://github.com/TheBlinkMan/skeleton21
+```
+
+### How to run the app with Docker Compose:
+
+#### Requirements:
+* Internet Access
+* Docker
+* Docker Compose
+
+#### Run this commands:
+```
+cd skeleton21
+docker-compose up --build
+```
+
+### Access the url localhost:8080 using a browser or a CLI tool
 
 ## Reminders
 1. Faça testes unitários, suite de testes bem organizados (Plus).
