@@ -8,10 +8,24 @@ return [
                 'options' => [
                     'route'    => '/',
                     'defaults' => [
-                        'controller' => 'Application\Controller\Index',
+                        'controller' => 'Application\Controller\Cartorio',
                         'action'     => 'index',
                     ],
                 ],
+            ],
+            'cartorio' => [
+                'type' => 'Segment',
+                'options' => [
+                    'route' => '/cartorio[/:action][/:id]',
+                    'constraints' => [
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id' => '[0-9]+',
+                    ],
+                    'defaults' => [
+                        'controller' => 'Application\Controller\Cartorio',
+                        'action' => 'index',
+                    ]
+                ]
             ],
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
@@ -37,7 +51,7 @@ return [
                                 'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
                                 'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
                             ],
-                            'defaults'    => [],
+                            'defaults' => [ ],
                         ],
                     ],
                 ],
@@ -64,6 +78,10 @@ return [
     'controllers'     => [
         'invokables' => [
             'Application\Controller\Index' => \Application\Controller\IndexController::class,
+            'Application\Controller\Cartorio' => \Application\Controller\CartorioController::class,
+        ],
+        'aliases' => [
+            'cartorio' => 'Application\Controller\Cartorio',
         ],
     ],
     'view_helpers'    => [
@@ -80,6 +98,10 @@ return [
         'template_map'             => [
             'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
             'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
+            'application/cartorio/index' => __DIR__ . '/../view/application/cartorio/index.phtml',
+            'application/cartorio/add' => __DIR__ . '/../view/application/cartorio/add.phtml',
+            'application/cartorio/edit' => __DIR__ . '/../view/application/cartorio/edit.phtml',
+            'application/cartorio/delete' => __DIR__ . '/../view/application/cartorio/delete.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ],
