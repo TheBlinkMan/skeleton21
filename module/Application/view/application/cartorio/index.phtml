@@ -1,0 +1,20 @@
+<?php echo $this->headTitle('Cartorio'); ?>
+
+<section class="jumbotron text-center">
+    <div class="container">
+        <div class="table-responsive">
+        <table class="table table-bordered">
+            <tr>
+            </tr>
+            <?php foreach ($this->cartorios as $cartorio): ?>
+                <tr>
+                    <td><?php echo $cartorio->getRazao() ?></td>
+                    <td><a href="<?php echo $this->url('cartorio',
+                    ['action' => 'edit', 'id' => $cartorio->getId()]); ?>">Editar</a></td>
+                    <td><a href="<?php echo $this->url('cartorio',
+                    ['action' => 'delete', 'id' => $cartorio->getId()]); ?>">Excluir</a></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+    </div>
+</section>

@@ -1,0 +1,20 @@
+<h3>Editar Cartorio</h3>
+  
+<form method="post">
+    Nome
+    <br>
+    <input type="text" name="name" value="<?php echo $this->cartorio->getName(); ?>">
+    <br><br>
+    Razao
+    <br>
+    <input type="text" name="razao" value="<?php echo $this->cartorio->getRazao(); ?>">
+    <br><br>
+    email
+    <br>
+    <input type="text" name="email" value="<?php echo $this->cartorio->getEmail(); ?>">
+    <br><br>
+    <input type="submit" value="Editar">
+</form>
+<br><br>
+<a href="<?php echo $this->url('cartorio', 
+        array('controller' => 'index', 'action' => 'index')); ?>">Listar Cartorios</a>

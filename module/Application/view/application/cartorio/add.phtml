@@ -1,0 +1,20 @@
+<h3>Add Cartorio</h3>
+  
+<form method="post">
+    Nome
+    <br>
+    <input type="text" name="name">
+    <br><br>
+    tipoDocumento
+    <br>
+    <input type="text" name="tipoDocumentoId">
+    <br><br>
+    Documento
+    <br>
+    <input type="text" name="documento">
+    <br><br>
+    <input type="submit" value="Add">
+</form>
+<br><br>
+<a href="<?php echo $this->url('cartorio', 
+        array('controller' => 'index', 'action' => 'index')); ?>">Listar Cartorios</a>
