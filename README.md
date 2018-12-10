@@ -18,6 +18,9 @@ git clone https://github.com/TheBlinkMan/skeleton21
 ```
 cd skeleton21
 docker-compose up --build
+docker ps
+docker exec -it [containerid] /bin/bash
+./vendor/bin/doctrine-module dbal:import cartorios.sql
 ```
 
 ### Access the url localhost:8080 using a browser or a CLI tool
